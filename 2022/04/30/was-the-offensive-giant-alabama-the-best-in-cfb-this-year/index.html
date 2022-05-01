@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.96.0" />
+
+
+<title>Was the Offensive Giant, Alabama, the Best in CFB This Year - Kirk Rangel&#39;s Github Site</title>
+<meta property="og:title" content="Was the Offensive Giant, Alabama, the Best in CFB This Year - Kirk Rangel&#39;s Github Site">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/rstudio/blogdown">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/rstudio">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">7 min read</span>
+    
+
+    <h1 class="article-title">Was the Offensive Giant, Alabama, the Best in CFB This Year</h1>
+
+    
+    <span class="article-date">2022-04-30</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>Alabama, an offensive giant know through out college football, took the No. 1 ranked spot in the AP polls this year before ultimately falling to the Georgia Bulldogs in the championship game. During my last post on Georgia’s defense, I compared the top four teams’ offensive and defensive efficiency. I was quite surprised to see how far Alabama’s offense stood apart from the other three teams. As a top ranked team, offense is pretty important to get to that spot, so was Alabama’s offense really the best in college football?</p>
+<p>The first thing we’ll look at is where Alabama stacks up against the competition in offensive efficiency. To get a better sense of things we’ll see how that correlates to total points scored during the season and number of win.</p>
+<p>To narrow things down a bit and avoid skewing the data we’ll eliminate conferences where strength of schedule might be an issue, where one dominate team just runs up the stats against everyone else. Teams like Western Kentucky, Louisiana, Utah St., and Appalachian St.</p>
+<p>Now comes actually calculating offensive efficiency for each team. To do that we’ll create a Z-score, a statistical measure of the distance from the mean called a z-score. Taking all the offensive categories and adding them together to get one overall rating.</p>
+<pre><code>## # A tibble: 1 × 2
+##   AvgOffZScore AvgScore
+##          &lt;dbl&gt;    &lt;dbl&gt;
+## 1     4.90e-16     370.</code></pre>
+<p>Here’s where Alabama lands in terms of offensive efficiency.
+<img src="/2022/04/30/was-the-offensive-giant-alabama-the-best-in-cfb-this-year/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+No surprise that they’re at the top. Landing way above the college football average. But what is surprising is they’re not at the very top, number one. In fact, two teams are actually rated higher in efficiency.</p>
+<p>Let’s find out who those teams are, as well as who the top 10 teams are in offensive efficiency.</p>
+<p>To get a sense of why these teams’ offensive ratings are the best we’ll also compare the teams’ average rush, passing, and points scored over the course of the season.</p>
+<p>Here’s the top 10 teams in offensive efficiency.</p>
+<div id="joywjrtujo" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#joywjrtujo .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#joywjrtujo .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#joywjrtujo .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#joywjrtujo .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#joywjrtujo .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#joywjrtujo .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#joywjrtujo .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#joywjrtujo .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#joywjrtujo .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#joywjrtujo .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#joywjrtujo .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#joywjrtujo .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#joywjrtujo .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#joywjrtujo .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#joywjrtujo .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#joywjrtujo .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#joywjrtujo .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#joywjrtujo .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#joywjrtujo .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#joywjrtujo .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#joywjrtujo .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#joywjrtujo .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#joywjrtujo .gt_left {
+  text-align: left;
+}
+
+#joywjrtujo .gt_center {
+  text-align: center;
+}
+
+#joywjrtujo .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#joywjrtujo .gt_font_normal {
+  font-weight: normal;
+}
+
+#joywjrtujo .gt_font_bold {
+  font-weight: bold;
+}
+
+#joywjrtujo .gt_font_italic {
+  font-style: italic;
+}
+
+#joywjrtujo .gt_super {
+  font-size: 65%;
+}
+
+#joywjrtujo .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#joywjrtujo .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#joywjrtujo .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#joywjrtujo .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#joywjrtujo .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="4" class="gt_heading gt_title gt_font_normal" style="color: #000000; text-align: left; font-weight: bold;">Only Alabama and Michigan, CFB Playoff teams, in the Top 10</th>
+    </tr>
+    <tr>
+      <th colspan="4" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="color: #000000; text-align: left;">Alabamas offensive efficiency is one piece of the puzzel that got them to No. 1 AP Ranking</th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;">OffensiveEfficiency</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;">Points Per Game</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;">Avg Pass Yards</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-bottom-width: 3px; border-bottom-style: solid; border-bottom-color: #000000; font-size: 12; font-weight: bold;">Avg Rush Yards</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Ohio State</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right">11.626105</td>
+<td class="gt_row gt_right">45.69231</td>
+<td class="gt_row gt_right">380.9231</td>
+<td class="gt_row gt_right">180.53846</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Pitt</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right gt_striped">8.154616</td>
+<td class="gt_row gt_right gt_striped">41.42857</td>
+<td class="gt_row gt_right gt_striped">337.3571</td>
+<td class="gt_row gt_right gt_striped">149.35714</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Alabama</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right" style="background-color: #9E1B32; color: #FFFFFF;">7.762409</td>
+<td class="gt_row gt_right" style="background-color: #9E1B32; color: #FFFFFF;">41.42857</td>
+<td class="gt_row gt_right" style="background-color: #9E1B32; color: #FFFFFF;">336.0000</td>
+<td class="gt_row gt_right" style="background-color: #9E1B32; color: #FFFFFF;">158.07143</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">SMU</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right gt_striped">7.693193</td>
+<td class="gt_row gt_right gt_striped">38.41667</td>
+<td class="gt_row gt_right gt_striped">304.5000</td>
+<td class="gt_row gt_right gt_striped">162.41667</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Utah</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right">7.089385</td>
+<td class="gt_row gt_right">36.14286</td>
+<td class="gt_row gt_right">214.2857</td>
+<td class="gt_row gt_right">217.00000</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Ole Miss</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right gt_striped">6.647276</td>
+<td class="gt_row gt_right gt_striped">33.69231</td>
+<td class="gt_row gt_right gt_striped">274.3846</td>
+<td class="gt_row gt_right gt_striped">218.00000</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Oklahoma</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right">6.556839</td>
+<td class="gt_row gt_right">39.07692</td>
+<td class="gt_row gt_right">263.7692</td>
+<td class="gt_row gt_right">187.76923</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Purdue</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right gt_striped">6.306742</td>
+<td class="gt_row gt_right gt_striped">29.07692</td>
+<td class="gt_row gt_right gt_striped">355.3846</td>
+<td class="gt_row gt_right gt_striped">84.92308</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Wake Forest</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right">6.094931</td>
+<td class="gt_row gt_right">41.00000</td>
+<td class="gt_row gt_right">307.3571</td>
+<td class="gt_row gt_right">160.57143</td></tr>
+    <tr class="gt_group_heading_row">
+      <td colspan="4" class="gt_group_heading">Michigan</td>
+    </tr>
+    <tr class="gt_row_group_first"><td class="gt_row gt_right gt_striped" style="background-color: #00274C; color: #FFFFFF;">5.826046</td>
+<td class="gt_row gt_right gt_striped" style="background-color: #00274C; color: #FFFFFF;">35.78571</td>
+<td class="gt_row gt_right gt_striped" style="background-color: #00274C; color: #FFFFFF;">228.7143</td>
+<td class="gt_row gt_right gt_striped" style="background-color: #00274C; color: #FFFFFF;">214.35714</td></tr>
+  </tbody>
+  <tfoot class="gt_sourcenotes">
+    <tr>
+      <td class="gt_sourcenote" colspan="4"><strong>By:</strong> Kirk Rangel  |  <strong>Source:</strong> Sports Reference</td>
+    </tr>
+  </tfoot>
+  
+</table>
+</div>
+<p>Even more surprising is that only two out of the four College Football Playoff teams fall in the top 10, Alabama and Michigan. Though Alabama’s the third ranked team here they were able to have tied for the second most average points scored in a game which would ultimately lead to better records than Ohio St. (11-2) and Pittsburgh (11-3).</p>
+<p>Finally, we’ll take an even closer look by narrowing our sights on the College Football Playoff teams. We’ll be looking at the break downs of where points on the board were coming from in terms of rushing and passing.</p>
+<p>Here’s how the final four teams stacked up against eachother.
+<img src="/2022/04/30/was-the-offensive-giant-alabama-the-best-in-cfb-this-year/index_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Alabama, known for a dynasty of quarterbacks going through their doors, leading the four teams in total passing yards. Why not go to the passing game when you have a quarterback that can air it out and so many weapons at the wide receiver positions.</p>
+<p>Was Alabama’s offense the best in college football, maybe not, but good enough to win games which matters the most to get to that No. 1 ranked spot. As always, there’s two sides to the game so with a little help from their defense they can stay in the win column.</p>
+<p>NOTE: This is the companion notebook for</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
