@@ -1,0 +1,182 @@
+```{r}
+library(tidyverse)
+library(scales)
+library(ggrepel)
+library(gt)
+```
+
+```{r}
+fb <- read_csv("footballlogs21 .csv")
+```
+
+```{r}
+winlossfb <- fb %>%
+  mutate(
+    wins = case_when(
+      grepl("W", Outcome) ~1,
+      grepl("L", Outcome) ~0))
+```
+
+```{r}
+teamtotal <- winlossfb %>%
+  group_by(Conference, Team) %>%
+  filter(Conference =="Atlantic Coast Conference" | Conference=="Big 12 Conference" | Conference=="Big Ten Conference" | Conference=="Pac-12 Conference" | Conference=="Southeastern Conference" | Conference=="American Athletic Conference") %>%
+  summarise(
+    PassingPctAvg = mean(PassingPct),
+    PassingYdsAvg = mean(PassingYds),
+    TotalPassingYds = sum(PassingYds),
+    TotalRushYds = sum(RushingYds),
+    RushingYdsAvg = mean(RushingYds),
+    OffPlaysAvg = mean(OffensivePlays),
+    OffYdsAvg = mean(OffensiveYards),
+    FirstDownAvg = mean(FirstDownTotal),
+    TurnoverAvg = mean(TotalTurnovers),
+    ScoreAvg = mean(TeamScore),
+    TotalScore = sum(TeamScore),
+    AvgPenalties = mean(Penalties),
+    TotalWins = sum(wins))
+```
+
+```{r}
+teamzscore <- teamtotal %>%
+  mutate(
+    PassPctZScore = as.numeric(scale(PassingPctAvg, center = TRUE, scale = TRUE)),
+    PassYdsZScore = as.numeric(scale(PassingYdsAvg, center = TRUE, scale = TRUE)),
+    RushYdsZScore = as.numeric(scale(RushingYdsAvg, center = TRUE, scale = TRUE)),
+    OffYdsZScore = as.numeric(scale(OffYdsAvg, center = TRUE, scale = TRUE)),
+    FirstDownZScore = as.numeric(scale(FirstDownAvg, center = TRUE, scale = TRUE)),
+    TurnoverZScore = as.numeric(scale(TurnoverAvg, center = TRUE, scale = TRUE))* -1,
+    PTSZScore = as.numeric(scale(ScoreAvg, center = TRUE, scale = TRUE)),
+    PenaltiesZScore = as.numeric(scale(AvgPenalties, center = TRUE, scale = TRUE))* -1,
+    OffPlayZScore = as.numeric(scale(OffPlaysAvg, center = TRUE, scale = TRUE)),
+    OffensiveEfficiency= PassPctZScore + PassYdsZScore + RushYdsZScore + OffYdsZScore + FirstDownZScore + TurnoverZScore +PTSZScore + PenaltiesZScore + OffPlayZScore
+  )
+```
+
+```{r}
+alabama <- teamzscore %>% filter(Team == "Alabama")
+```
+
+```{r}
+teamzscore %>%
+  ungroup() %>%
+  summarize(
+    AvgOffZScore = mean(OffensiveEfficiency),
+    AvgScore = mean(TotalScore)
+  )
+```
+
+```{r}
+ggplot() + geom_point(data=teamzscore, aes(x=OffensiveEfficiency, y =TotalScore, size=TotalWins),
+                      color="grey",
+                      alpha = .5) +
+  scale_size(range = c(2, 9), name="Wins") +
+  geom_point(
+    data=alabama,
+    aes(x=OffensiveEfficiency, y =TotalScore, size=TotalWins),
+    color = "#9E1B32"
+  ) +
+  geom_vline(xintercept = 0.0000000000000004899322) +
+  geom_hline(yintercept = 370.3467) +
+  annotate("text", x=8, y= 550, label="Alabama") +
+  labs(
+    x="Offensive Efficiency Score ",
+    y="Total Points Scored",
+    title="Alabama's offense not slowing down",
+    subtitle="Dominating offense propels Alabama up in standings",
+    caption="Source: Sports Reference | By Kirk Rangel"
+  ) +
+  theme_light()+
+  theme(
+    plot.title = element_text(size = 20, face = "bold"),
+      axis.title = element_text(size = 8), 
+    plot.subtitle = element_text(size=10),
+    panel.grid.minor = element_blank())
+```
+
+```{r}
+top10 <- teamzscore %>%
+   group_by(Team)%>%
+  filter(Team=="Ohio State"|Team=="Pitt"|Team=="Alabama"|Team=="SMU"|Team=="Utah"|Team=="Ole Miss"|Team=="Oklahoma"|Team=="Oklahoma"|Team=="Purdue"|Team=="Wake Forest"|Team=="Michigan") %>%
+  select(Team, OffensiveEfficiency, ScoreAvg, PassingYdsAvg, RushingYdsAvg) %>%
+  arrange(desc(OffensiveEfficiency))
+```
+
+```{r}
+top10 %>%
+  gt() %>%
+  cols_label(
+    ScoreAvg = "Points Per Game",
+    PassingYdsAvg = "Avg Pass Yards",
+    RushingYdsAvg = "Avg Rush Yards"
+  ) %>%
+  tab_header(
+    title ="Only Alabama and Michigan, CFB Playoff teams, in the Top 10",
+    subtitle = "Alabamas offensive efficiency is one piece of the puzzel that got them to No. 1 AP Ranking"
+  ) %>%
+  tab_style(
+    style = cell_text(color = "black", weight = "bold", align = "left"),
+    locations = cells_title("title")
+  ) %>% tab_style(
+    style = cell_text(color = "black", align = "left"),
+    locations = cells_title("subtitle")) %>%
+ tab_source_note(
+    source_note = md("**By:** Kirk Rangel  |  **Source:** Sports Reference")
+  ) %>%
+  tab_style(
+     locations = cells_column_labels(columns = everything()),
+     style = list(
+       cell_borders(sides = "bottom", weight = px(3)),
+       cell_text(weight = "bold", size=12)
+     ))  %>%
+  opt_row_striping %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#9E1B32"),
+      cell_text(color = "white")
+      ),
+    locations = cells_body(
+      rows = Team == "Alabama")
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "#00274C"),
+      cell_text(color = "white")
+      ),
+    locations = cells_body(
+      rows = Team == "Michigan"))
+```
+
+```{r}
+topteams <- teamtotal %>%
+  filter(Team =="Alabama" | Team=="Michigan" | Team=="Cincinnati" | Team=="Georgia") %>%
+  select(Conference, Team, TotalPassingYds, TotalRushYds)
+```
+
+```{r}
+topteamswide <- topteams %>%
+   pivot_longer(
+    cols=starts_with("Total"),
+    names_to="Type",
+    values_to="TotalYards"
+  )
+```
+
+```{r}
+ggplot() + 
+  geom_bar(data=topteamswide, aes(x=reorder(Team, TotalYards), weight=TotalYards, fill=Type)) +
+  scale_fill_manual(values = c("#D2042D", "#3D7B36"))+
+  labs(
+    x="",
+    y="Total Yards",
+    title="Where's this offense coming from?",
+    subtitle="Alabama's quarterbacks continue to showcase their arm even in 2021",
+    caption ="Source: Sports Reference | By Kirk Rangel"
+  ) +
+ theme_light()+
+  theme(
+    plot.title = element_text(size = 12, face = "bold"),
+      axis.title = element_text(size = 8), 
+    plot.subtitle = element_text(size=9),
+    panel.grid.minor = element_blank())
+```
